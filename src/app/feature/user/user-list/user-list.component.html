@@ -1,11 +1,20 @@
+<app-menu></app-menu>
 <section class="heading">
     <span class="page-title font-weight-bold font-italic">[{{title}}]</span>
 </section>
 <table class="table table-sm table-striped">
     <thead>
         <tr>
-            <th>ID</th><th>Username</th><th>Password</th><th>First Name</th><th>Last Name</th>
-            <th>Phone Number</th><th>Email</th><th>Is Reviewer</th><th>Is Admin</th><th>Action</th>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Is Reviewer</th>
+            <th>Is Admin</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -17,8 +26,8 @@
             <td>{{user.lastName}}</td>
             <td>{{user.phoneNumber}}</td>
             <td>{{user.email}}</td>
-            <td>{{user.isReviewer}}</td>
-            <td>{{user.isAdmin}}</td>
+            <td><input [(ngModel)]="user.reviewer" class="rounded" type="checkbox" disabled></td>
+            <td><input [(ngModel)]="user.admin" class="rounded" type="checkbox" disabled></td>
             <td>Details | Edit</td>
         </tr>
     </tbody>

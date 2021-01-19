@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './feature/user/user-list/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './core/menu/menu/menu.component';
+import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent
+    UserListComponent,
+    MenuComponent,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule,
