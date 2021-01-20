@@ -1,6 +1,9 @@
 <app-menu></app-menu>
 <section class="heading">
     <span class="page-title font-weight-bold font-italic">[{{title}}]</span>
+    <a routerLink='/user-create'>
+        <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+    </a>
 </section>
 <table class="table table-sm table-striped">
     <thead>
@@ -28,7 +31,10 @@
             <td>{{user.email}}</td>
             <td><input [(ngModel)]="user.reviewer" class="rounded" type="checkbox" disabled></td>
             <td><input [(ngModel)]="user.admin" class="rounded" type="checkbox" disabled></td>
-            <td>Details | Edit</td>
+            <td><a routerLink='/user-detail/{{user.id}}'>
+                <img width='20' height='20' src='assets/details.png' title='User Details'></a>
+            | <a routerLink='/user-edit/{{user.id}}'>
+              <img width='20' height='20' src='assets/pencil-icon.png' title='User Edit'></a></td>
         </tr>
     </tbody>
 </table>

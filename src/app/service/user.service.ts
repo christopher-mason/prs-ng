@@ -30,10 +30,10 @@ create(user: User): Observable<User> {
 //   return this.http.put(URL+'/', user) as Observable<User>;
 // }
 
-// // delete actor
-// delete(id): Observable<User> {
-//   return this.http.delete(URL+'/'+ id) as Observable<User>;
-// }
+// delete actor
+delete(id): Observable<User> {
+  return this.http.delete(URL+'/'+ id) as Observable<User>;
+}
 
 // //login
 // login(u: User): Observable<User> {

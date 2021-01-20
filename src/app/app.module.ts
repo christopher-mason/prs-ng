@@ -8,6 +8,7 @@ import { UserListComponent } from './feature/user/user-list/user-list.component'
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './core/menu/menu/menu.component';
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
+import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { UserCreateComponent } from './feature/user/user-create/user-create.comp
     AppComponent,
     UserListComponent,
     MenuComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
