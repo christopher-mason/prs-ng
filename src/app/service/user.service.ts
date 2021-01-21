@@ -25,19 +25,19 @@ create(user: User): Observable<User> {
   return this.http.post(URL+'/', user) as Observable<User>;
 }
 
-// //update actor
-// update(user: User): Observable<User> {
-//   return this.http.put(URL+'/', user) as Observable<User>;
-// }
+//update actor
+update(user: User): Observable<User> {
+  return this.http.put(URL+'/', user) as Observable<User>;
+}
 
 // delete actor
 delete(id): Observable<User> {
   return this.http.delete(URL+'/'+ id) as Observable<User>;
 }
 
-// //login
-// login(u: User): Observable<User> {
-//   return this.http.post(URL + '/login', u) as Observable<User>
-// }
+//login
+login(u: User): Observable<User> {
+  return this.http.post(URL + '/login', u) as Observable<User>
+}
 
 }

@@ -9,15 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './core/menu/menu/menu.component';
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent,
     MenuComponent,
+    UserListComponent,
     UserCreateComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,

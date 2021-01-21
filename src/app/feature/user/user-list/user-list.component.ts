@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.class';
 import { UserService } from 'src/app/service/user.service';
 
@@ -11,7 +12,7 @@ export class UserListComponent implements OnInit {
   title = "User List"
   users: User[] = [];
 
-  constructor(private userSvc: UserService) { }
+  constructor(private userSvc: UserService, private router: Router) { }
 
   ngOnInit(): void {
     // populate list of users
