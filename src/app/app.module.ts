@@ -11,6 +11,7 @@ import { UserCreateComponent } from './feature/user/user-create/user-create.comp
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
+import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { UserEditComponent } from './feature/user/user-edit/user-edit.component'
     UserCreateComponent,
     UserDetailComponent,
     UserLoginComponent,
-    UserEditComponent
+    UserEditComponent,
+    VendorListComponent
   ],
   imports: [
     BrowserModule,
