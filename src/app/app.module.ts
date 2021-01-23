@@ -12,6 +12,9 @@ import { UserDetailComponent } from './feature/user/user-detail/user-detail.comp
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
 import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
+import { VendorCreateComponent } from './feature/vendor/vendor-create/vendor-create.component';
+import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
+import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.co
     UserDetailComponent,
     UserLoginComponent,
     UserEditComponent,
-    VendorListComponent
+    VendorListComponent,
+    VendorCreateComponent,
+    VendorDetailComponent,
+    VendorEditComponent
   ],
   imports: [
     BrowserModule,

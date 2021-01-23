@@ -1,1 +1,27 @@
-<p>vendor-list works!</p>
+<app-menu></app-menu>
+<section class="heading">
+    <span class="page-title font-weight-bold font-italic">[{{title}}]</span>
+    <a routerLink='/vendor-create'>
+        <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+    </a>
+</section>
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>ID</th><th>Code</th><th>Name</th><th>Phone Number</th><th>Email</th><th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let vendor of vendors'>
+            <td>{{vendor.id}}</td>
+            <td>{{vendor.code}}</td>
+            <td>{{vendor.name}}</td>
+            <td>{{vendor.phoneNumber}}</td>
+            <td>{{vendor.email}}</td>
+            <td><a routerLink='/vendor-detail/{{vendor.id}}'>
+                <img width='20' height='20' src='assets/details.png' title='Vendor Details'></a>
+            | <a routerLink='/vendor-edit/{{vendor.id}}'>
+              <img width='20' height='20' src='assets/pencil-icon.png' title='Vendor Edit'></a></td>
+        </tr>
+    </tbody>
+</table>

@@ -8,8 +8,10 @@ import { MenuItem } from 'src/app/model/menu-item.class';
 })
 export class MenuComponent implements OnInit {
   menuItems : MenuItem[] = [
+    new MenuItem("Vendor","/vendor-list","Vendor List"),
     new MenuItem("User", "/user-list", "User List"),
     new MenuItem("Login","/user-login","User Login")
+    
   ];
 
   constructor() { }

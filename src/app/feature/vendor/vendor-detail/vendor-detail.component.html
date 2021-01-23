@@ -1,0 +1,50 @@
+<app-menu></app-menu>
+<div class="component">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span>&nbsp;<a routerLink="/vendor-list">Return to List</a></span>
+    </section>
+    <main *ngIf='vendor' class="single">
+        <table class="table table-sm">
+            <tr>
+                <td>ID</td>
+                <td>{{vendor.id}}</td>
+            </tr>
+            <tr>
+                <td>Code:</td>
+                <td><input [(ngModel)]="vendor.code" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input [(ngModel)]="vendor.name" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input [(ngModel)]="vendor.address" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td><input [(ngModel)]="vendor.city" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td><input [(ngModel)]="vendor.state" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Zip:</td>
+                <td><input [(ngModel)]="vendor.zip" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Phone Number:</td>
+                <td><input [(ngModel)]="vendor.phoneNumber" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input [(ngModel)]="vendor.email" class="rounded" type="text" disabled></td>
+            </tr>
+        </table>
+    </main>
+    <span>
+        <span>&nbsp;<button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
+    </span>
+</div>
