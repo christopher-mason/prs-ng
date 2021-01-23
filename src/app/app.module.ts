@@ -15,6 +15,11 @@ import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.co
 import { VendorCreateComponent } from './feature/vendor/vendor-create/vendor-create.component';
 import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.component';
+import { ProductListComponent } from './feature/product/product-list/product-list.component';
+import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
+import { NoComponentDefinedComponent } from './core/no-component-defined/no-component-defined/no-component-defined.component';
+import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
+import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 
 
 @NgModule({
@@ -29,7 +34,12 @@ import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.co
     VendorListComponent,
     VendorCreateComponent,
     VendorDetailComponent,
-    VendorEditComponent
+    VendorEditComponent,
+    ProductListComponent,
+    ProductCreateComponent,
+    NoComponentDefinedComponent,
+    ProductDetailComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
