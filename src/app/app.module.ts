@@ -20,6 +20,7 @@ import { ProductCreateComponent } from './feature/product/product-create/product
 import { NoComponentDefinedComponent } from './core/no-component-defined/no-component-defined/no-component-defined.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
+import { RequestListComponent } from './feature/request/request-list/request-list.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { ProductEditComponent } from './feature/product/product-edit/product-edi
     ProductCreateComponent,
     NoComponentDefinedComponent,
     ProductDetailComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    RequestListComponent
   ],
   imports: [
     BrowserModule,
