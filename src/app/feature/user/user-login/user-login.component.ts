@@ -16,12 +16,28 @@ export class UserLoginComponent implements OnInit {
 
   constructor(private userSvc: UserService, private sysSvc: SystemService, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   login() {
     // call login service using username and password
-    
+    this.userSvc.login(this.user).subscribe(
+      resp => {
+        if (resp==null) {
+          this.msg = "Invalid username/password!";
+        }
+        else {
+          this.user = resp as User;
+          console.log("Successful login!",this.user);
+          this.sysSvc.loggedInUser = this.user;
+          console.log("Authenticated User set in sysSvc.", this.sysSvc.loggedInUser);
+          this.router.navigateByUrl('/product-list');
+        }
+      },
+      err => {
+        console.group("User login error!",err);
+        this.msg = "Error during login";
+      }
+    );
   }
-
 }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 import { NoComponentDefinedComponent } from './core/no-component-defined/no-component-defined/no-component-defined.component';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
@@ -20,6 +19,10 @@ import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.co
 
 const routes: Routes = [
   { path: '', redirectTo: 'user-list', pathMatch: 'full'},
+  { path: 'product-list', component: ProductListComponent},
+  { path: 'product-create', component: ProductCreateComponent},
+  { path: 'product-detail/:id', component: ProductDetailComponent},
+  { path: 'product-edit/:id', component: ProductEditComponent},
   { path: 'user-list', component: UserListComponent },
   { path: 'user-create', component: UserCreateComponent },
   { path: 'user-detail/:id', component: UserDetailComponent }, 
@@ -29,10 +32,6 @@ const routes: Routes = [
   { path: 'vendor-create', component: VendorCreateComponent},
   { path: 'vendor-detail/:id', component: VendorDetailComponent},
   { path: 'vendor-edit/:id', component: VendorEditComponent},
-  { path: 'product-list', component: ProductListComponent},
-  { path: 'product-create', component: ProductCreateComponent},
-  { path: 'product-detail/:id', component: ProductDetailComponent},
-  { path: 'product-edit/:id', component: ProductEditComponent},
   { path: 'request-list', component: RequestListComponent},
   { path: '**', component: NoComponentDefinedComponent}
 ];
