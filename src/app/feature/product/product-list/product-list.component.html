@@ -8,14 +8,15 @@
 <table class="table table-sm table-striped">
     <thead>
         <tr>
-            <th>ID</th><th>Product Name</th><th>Vendor</th><th>Price</th><th>Action</th>
+            <th>ID</th><th>Vendor</th><th>Part Number</th><th>Name</th><th>Price</th><th>Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor='let product of products'>
             <td>{{product.id}}</td>
-            <td>{{product.name}}</td>
             <td>{{product.vendor.name}}</td>
+            <td>{{product.partNumber}}</td>
+            <td>{{product.name}}</td>
             <td>{{product.price}}</td>
             <td><a routerLink='/product-detail/{{product.id}}'>
                 <img width='20' height='20' src='assets/details.png' title='Product Details'></a> 

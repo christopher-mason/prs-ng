@@ -8,7 +8,8 @@
 <table class="table table-sm table-striped">
     <thead>
         <tr>
-            <th>ID</th><th>Code</th><th>Name</th><th>Phone Number</th><th>Email</th><th>Action</th>
+            <th>ID</th><th>Code</th><th>Name</th><th>Address</th>
+            <th>City</th><th>State</th><th>Zip</th><th>Phone Number</th><th>Email</th><th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,10 @@
             <td>{{vendor.id}}</td>
             <td>{{vendor.code}}</td>
             <td>{{vendor.name}}</td>
+            <td>{{vendor.address}}</td>
+            <td>{{vendor.city}}</td>
+            <td>{{vendor.state}}</td>
+            <td>{{vendor.zip}}</td>
             <td>{{vendor.phoneNumber}}</td>
             <td>{{vendor.email}}</td>
             <td><a routerLink='/vendor-detail/{{vendor.id}}'>

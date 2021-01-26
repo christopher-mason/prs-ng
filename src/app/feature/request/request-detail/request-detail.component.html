@@ -1,0 +1,54 @@
+<app-menu></app-menu>
+<div class="component">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span>&nbsp;<a routerLink="/request-list">Return to List</a></span>
+    </section>
+    <main *ngIf='request' class="single">
+        <table class="table table-sm">
+            <tr>
+                <td>ID</td>
+                <td>{{request.id}}</td>
+            </tr>
+            <tr>
+                <td>User:</td>
+                <td><input [(ngModel)]="request.user.userName" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><input [(ngModel)]="request.description" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Justification:</td>
+                <td><input [(ngModel)]="request.justification" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Date Needed:</td>
+                <td><input [(ngModel)]="request.dateNeeded" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Delivery Mode:</td>
+                <td><input [(ngModel)]="request.deliveryMode" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Status:</td>
+                <td><input [(ngModel)]="request.status" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Total:</td>
+                <td><input [(ngModel)]="request.total" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Submitted Date:</td>
+                <td><input [(ngModel)]="request.submittedDate" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Reason for Rejection:</td>
+                <td><input [(ngModel)]="request.reasonForRejection" class="rounded" type="text" disabled></td>
+            </tr>
+        </table>
+    </main>
+    <span>
+        <span><button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
+    </span>
+</div>
