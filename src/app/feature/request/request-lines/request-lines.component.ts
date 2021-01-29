@@ -30,6 +30,29 @@ export class RequestLinesComponent implements OnInit {
       parms => {
         this.requestID = parms['id'];
       });
+
+    // get request by id
+    this.requestSvc.getByID(this.requestID).subscribe(
+      (resp) => {
+        this.request = resp as Request;
+        console.log('Request', this.request);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+
+    // get lineitems by request ID
+    this.lineItemSvc.getLineItemByPr(this.requestID).subscribe(
+      (resp) => {
+        console.log("li resp: " , resp)
+        this.lineItems = resp as LineItem[];
+        console.log('LineItems', this.lineItems);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
 }

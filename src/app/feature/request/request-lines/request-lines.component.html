@@ -3,18 +3,18 @@
     <span class="page-title font-weight-bold font-italic">[{{requestTitle}}]</span>
     <span>&nbsp;<a routerLink="/request-list">Return to List</a></span>
 </section>
-<table *ngIf='request' class="table table-sm table-striped">
+<table *ngIf="request" class="table table-sm table-striped">
     <thead>
-        <tr>
-            <th>ID</th><th>Description</th><th>Status</th><th>Total</th>
-        </tr>
+      <tr>
+        <th>ID</th><th>Description</th><th>Status</th><th>Total</th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>{{request.id}}</td>
-            <td>{{request.description}}</td>
-            <td>{{request.status}}</td>
-            <td>{{request.total | currency}}</td>
-        </tr>
+      <tr>
+        <td>{{request.id}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total}}</td>
+      </tr>
     </tbody>
-</table>
+  </table>
