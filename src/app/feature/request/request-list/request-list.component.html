@@ -8,8 +8,8 @@
 <table class="table table-sm table-striped">
     <thead>
         <tr>
-            <th>ID</th><th>User</th><th>Description</th><th>Justificaton</th><th>Date Needed</th><th>Delivery Mode</th>
-            <th>Status</th><th>Total</th><th>Submitted Date</th><th>Reason for Rejection</th><th>Action</th>
+            <th>ID</th><th>User</th><th>Description</th><th>Date Needed</th>
+            <th>Status</th><th>Total</th><th>Submitted Date</th><th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -17,19 +17,17 @@
             <td>{{request.id}}</td>
             <td>{{request.user.userName}}</td>
             <td>{{request.description}}</td>
-            <td>{{request.justification}}</td>
             <td>{{request.dateNeeded}}</td>
-            <td>{{request.deliveryMode}}</td>
             <td>{{request.status}}</td>
             <td>{{request.total}}</td>
             <td>{{request.submittedDate}}</td>
-            <td>{{request.reasonForRejection}}</td>
             <td><a routerLink='/request-detail/{{request.id}}'>
                 <img width='20' height='20' src='assets/details.png' title='Request Details'></a> 
             | <a routerLink='/request-edit/{{request.id}}'>
-                <img width='20' height='20' src='assets/pencil-icon.png' title='Request Edit'></a></td>
+                <img width='20' height='20' src='assets/pencil-icon.png' title='Request Edit'></a>
             |  <a routerLink='/request-lines/{{request.id}}'>
                 <img width='20' height='20' src='assets/lines.png' title='PR Edit'></a>
+            </td>
         </tr>
     </tbody>
 </table>

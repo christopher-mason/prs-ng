@@ -23,7 +23,7 @@ getByID(id) : Observable<LineItem> {
 
 // create LineItem
 create(lineItem: LineItem) : Observable<LineItem> {
-  return this.http.post(URL+'/', LineItem) as Observable<LineItem>;
+  return this.http.post(URL+'/', lineItem) as Observable<LineItem>;
 }
 
 // update LineItem

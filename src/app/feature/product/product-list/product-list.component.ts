@@ -22,7 +22,7 @@ export class ProductListComponent implements OnInit {
       err => {
         console.log(err);
       }
-    )
+    );
   }
 
 }

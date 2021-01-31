@@ -17,7 +17,7 @@ export class LineItemCreateComponent implements OnInit {
   title = "Line Item Create";
   submitBtnTitle = "Create";
   request: Request = new Request();
-  product: Product[] = [];
+  products: Product[] = [];
   lineItem: LineItem = new LineItem();
   requestID: number = 0;
   
@@ -42,6 +42,15 @@ export class LineItemCreateComponent implements OnInit {
         console.log(err);
       }
     );
+    //call product service to populate list of products
+    this.productSvc.getAll().subscribe(
+      resp => {
+        this.products = resp as Product[];
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   save() {
@@ -50,7 +59,8 @@ export class LineItemCreateComponent implements OnInit {
     this.lineItemSvc.create(this.lineItem).subscribe(
       resp => {
         this.lineItem = resp as LineItem;
-        this.router.navigateByUrl("/request-lines/"+this.requestID);
+        console.log('Line item created', this.lineItem);
+        this.router.navigateByUrl('/request-lines/'+this.requestID);
       },
       err => {
         console.log(err);
