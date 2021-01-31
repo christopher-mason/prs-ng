@@ -14,7 +14,7 @@ import { SystemService } from 'src/app/service/system.service';
 export class RequestLinesComponent implements OnInit {
   requestTitle = "PurchaseRequest Line Items";
   linesTitle = "Lines";
-  request: Request = null;
+  request: Request = new Request();
   lineItems: LineItem[] = [];
   lineItem: LineItem = new LineItem();
   requestID = 0;

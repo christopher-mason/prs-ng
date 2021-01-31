@@ -18,3 +18,29 @@
       </tr>
     </tbody>
   </table>
+
+  <section class="heading">
+    <span class="page-title font-weight-bold font-italic">[{{linesTitle}}]</span>
+    <a routerLink="/line-item-create/{{request.id}}">
+      <img width="20" height="20" src="assets/add-icon.png" title="Add New">
+    </a>
+  </section>
+  <table class="table table-sm table-striped">
+    <thead>
+      <tr>
+        <th>ID</th><th>Product</th><th>Quantity</th><th>Price</th><th>Line Total</th><th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf='lineItems.length == 0'>
+        <td class="table-danger" colspan="6">No line items yet. Please create a new one!</td>
+      </tr>
+      <tr *ngFor="let lineItem of lineItems">
+        <td>{{lineItem.id}}</td>
+        <td>{{lineItem.product.name}}</td>
+        <td>{{lineItem.quantity}}</td>
+        <td>{{lineItem.product.price | currency}}</td>
+        <td>{{lineItem.quantity * lineItem.product.price}}</td>
+      </tr>
+    </tbody>
+  </table>
