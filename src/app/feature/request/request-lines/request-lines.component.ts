@@ -60,9 +60,8 @@ export class RequestLinesComponent implements OnInit {
     this.lineItemSvc.delete(lineItemID).subscribe(
       resp => {
         this.lineItem = resp as LineItem;
-        // reload page
-        //this.ngOnInit();
-        this.router.navigateByUrl("/request-lines");
+        // reload request lines page
+        this.router.navigateByUrl("/request-lines/"+this.requestID);
       },
       err => {
         console.log(err);
