@@ -28,7 +28,7 @@ create(lineItem: LineItem) : Observable<LineItem> {
 
 // update LineItem
 update(lineItem: LineItem) : Observable<LineItem> {
-  return this.http.put(URL+'/', LineItem) as Observable<LineItem>;
+  return this.http.put(URL+'/', lineItem) as Observable<LineItem>;
 }
 
 // delete LineItem

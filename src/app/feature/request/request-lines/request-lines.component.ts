@@ -33,7 +33,7 @@ export class RequestLinesComponent implements OnInit {
 
     // get request by id
     this.requestSvc.getByID(this.requestID).subscribe(
-      (resp) => {
+      resp => {
         this.request = resp as Request;
         console.log('Request', this.request);
       },
@@ -44,12 +44,25 @@ export class RequestLinesComponent implements OnInit {
 
     // get lineitems by request ID
     this.lineItemSvc.getLineItemByPr(this.requestID).subscribe(
-      (resp) => {
-        console.log("li resp: " , resp)
+      resp => {
         this.lineItems = resp as LineItem[];
         console.log('LineItems', this.lineItems);
       },
       (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  delete() {
+    // delete the line item from the DB
+    this.lineItemSvc.delete(this.lineItem.id).subscribe(
+      resp => {
+        this.lineItem = resp as LineItem;
+        // forward to the product list component
+        this.router.navigateByUrl("/request-lines");
+      },
+      err => {
         console.log(err);
       }
     );
