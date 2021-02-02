@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LineItem } from 'src/app/model/lineitem.class';
@@ -37,7 +38,7 @@ export class RequestLinesComponent implements OnInit {
         this.request = resp as Request;
         console.log('Request', this.request);
       },
-      (err) => {
+      err => {
         console.log(err);
       }
     );
@@ -48,18 +49,19 @@ export class RequestLinesComponent implements OnInit {
         this.lineItems = resp as LineItem[];
         console.log('LineItems', this.lineItems);
       },
-      (err) => {
+      err => {
         console.log(err);
       }
     );
   }
 
-  delete() {
+  delete(lineItemID: number) {
     // delete the line item from the DB
-    this.lineItemSvc.delete(this.lineItem.id).subscribe(
+    this.lineItemSvc.delete(lineItemID).subscribe(
       resp => {
         this.lineItem = resp as LineItem;
-        // forward to the product list component
+        // reload page
+        //this.ngOnInit();
         this.router.navigateByUrl("/request-lines");
       },
       err => {
