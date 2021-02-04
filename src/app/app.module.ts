@@ -27,6 +27,7 @@ import { RequestDetailComponent } from './feature/request/request-detail/request
 import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
 import { LineItemCreateComponent } from './feature/lineItem/line-item-create/line-item-create.component';
 import { LineItemEditComponent } from './feature/lineItem/line-item-edit/line-item-edit.component';
+import { RequestReviewComponent } from './feature/request/request-review/request-review.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { LineItemEditComponent } from './feature/lineItem/line-item-edit/line-it
     RequestDetailComponent,
     RequestLinesComponent,
     LineItemCreateComponent,
-    LineItemEditComponent
+    LineItemEditComponent,
+    RequestReviewComponent
   ],
   imports: [
     BrowserModule,
