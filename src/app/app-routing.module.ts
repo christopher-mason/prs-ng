@@ -7,6 +7,7 @@ import { ProductCreateComponent } from './feature/product/product-create/product
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { ProductListComponent } from './feature/product/product-list/product-list.component';
+import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
 import { RequestDetailComponent } from './feature/request/request-detail/request-detail.component';
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
@@ -47,6 +48,7 @@ const routes: Routes = [
   { path: 'line-item-create/:id', component: LineItemCreateComponent},
   { path: 'line-item-edit/:id', component: LineItemEditComponent},
   { path: 'request-review', component: RequestReviewComponent},
+  { path: 'request-approve/:id', component: RequestApproveComponent},
   { path: '**', component: NoComponentDefinedComponent}
 ];
 

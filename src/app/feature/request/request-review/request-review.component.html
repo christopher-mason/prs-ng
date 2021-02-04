@@ -9,13 +9,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let request of requests">
+    <tr *ngFor='let request of requests'>
       <td>{{request.id}}</td>
       <td>{{request.user.userName}}</td>
       <td>{{request.description}}</td>
       <td>{{request.status}}</td>
       <td>{{request.total | currency}}</td>
-      <td><a routerLink="/request-approve/{{ request.id }}">
+      <td><a routerLink="/request-approve/{{request.id}}">
         <img width="20" height="20" src="assets/review.png" title="Request Approved"></a>
       </td>
     </tr>
