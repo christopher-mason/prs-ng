@@ -19,6 +19,7 @@ export class RequestLinesComponent implements OnInit {
   lineItems: LineItem[] = [];
   lineItem: LineItem = new LineItem();
   requestID = 0;
+  submitBtnTitle = "Submit for Review";
 
   constructor(private lineItemSvc: LineItemService, private requestSvc: RequestService, private sysSvc: SystemService,
     private router: Router, private route: ActivatedRoute) { }
@@ -62,6 +63,20 @@ export class RequestLinesComponent implements OnInit {
         this.lineItem = resp as LineItem;
         // reload request lines page
         this.router.navigateByUrl("/request-lines/"+this.requestID);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  // Submit for review
+  submit() {
+    this.requestSvc.submitForReview(this.request).subscribe(
+      resp => {
+        this.request = resp as Request;
+        // forward to the request list component
+        this.router.navigateByUrl("/request-list");
       },
       err => {
         console.log(err);

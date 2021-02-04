@@ -45,4 +45,14 @@ export class RequestService {
   review(id) : Observable<Request[]> {
     return this.http.get(URL+'/list-review/'+id) as Observable<Request[]>;
   }
+
+  // approve a request
+  approve(request: Request) : Observable<Request> {
+    return this.http.put(URL+'/approve', request) as Observable<Request>;
+  }
+
+  // reject a request
+  reject(request: Request) : Observable<Request> {
+    return this.http.put(URL+'/reject', request) as Observable<Request>;
+  }
 }
