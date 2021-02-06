@@ -9,7 +9,7 @@ import { Request } from 'src/app/model/request.class';
   styleUrls: ['./request-review.component.css']
 })
 export class RequestReviewComponent implements OnInit {
-  title = "PurchaseRequest List";
+  title = "PurchaseRequest Review";
   requests: Request[] = [];
   requestID: number = 0;
 

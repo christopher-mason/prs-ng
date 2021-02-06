@@ -17,7 +17,7 @@ export class RequestApproveComponent implements OnInit {
   requestID = 0;
   linesTitle = 'Line Items';
   lineItems: LineItem[] = [];
-  approveBtn = "Approved";
+  approveBtn = "Approve";
   rejectBtn = "Reject";
 
   constructor(private requestSvc: RequestService, private lineItemSvc: LineItemService, 
@@ -57,6 +57,7 @@ export class RequestApproveComponent implements OnInit {
   approveRequest() {
     this.requestSvc.approveRequest(this.request).subscribe(
       resp => {
+        this.request = resp as Request;
         this.router.navigateByUrl("/request-review");
       }
     );
