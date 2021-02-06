@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/model/user.class';
+import { SystemService } from 'src/app/service/system.service';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -13,11 +14,18 @@ export class UserEditComponent implements OnInit {
   user: User = null;
   userID: number = 0;
   submitBtnTitle = "Save";
+  isNotAdmin = false;
 
 
-  constructor(private userSvc: UserService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private userSvc: UserService, private sysSvc: SystemService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.sysSvc.checkLogin();
+
+    if(!(this.sysSvc.loggedInUser.isAdmin)) {
+      this.isNotAdmin = true;
+    }
+
     // get all from URL
     this.route.params.subscribe(
       parms => {
@@ -41,7 +49,6 @@ export class UserEditComponent implements OnInit {
     this.userSvc.update(this.user).subscribe(
       resp => {
         this.user = resp as User;
-        console.log("User Saved", this.user);
         this.router.navigateByUrl("/user-list");
       },
       err => {

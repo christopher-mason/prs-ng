@@ -55,22 +55,20 @@ export class RequestApproveComponent implements OnInit {
 
   // approve
   approveRequest() {
-    this.requestSvc.approve(this.request).subscribe(
+    this.requestSvc.approveRequest(this.request).subscribe(
       resp => {
-        this.request = resp as Request;
-        // forward to request review
-        this.router.navigateByUrl("/request-review/"+this.sysSvc.loggedInUser.id)
+        this.router.navigateByUrl("/request-review");
       }
     );
   }
 
   // reject
   rejectRequest() {
-    this.requestSvc.reject(this.request).subscribe(
+    this.requestSvc.rejectRequest(this.request).subscribe(
       resp => {
         this.request = resp as Request;
         // forward to request review
-        this.router.navigateByUrl("/request-review/"+this.sysSvc.loggedInUser.id)
+        this.router.navigateByUrl("/request-review");
       }
     );
   }

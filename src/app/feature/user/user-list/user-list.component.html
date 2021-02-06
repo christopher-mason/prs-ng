@@ -15,13 +15,13 @@
             <th>Last Name</th>
             <th>Phone Number</th>
             <th>Email</th>
-            <th>Is Reviewer</th>
-            <th>Is Admin</th>
+            <th>Reviewer</th>
+            <th>Admin</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor='let user of users'>
+        <tr *ngFor="let user of users">
             <td>{{user.id}}</td>
             <td>{{user.userName}}</td>
             <td>{{user.password}}</td>
@@ -29,12 +29,13 @@
             <td>{{user.lastName}}</td>
             <td>{{user.phoneNumber}}</td>
             <td>{{user.email}}</td>
-            <td><input [(ngModel)]="user.reviewer" class="rounded" type="checkbox" disabled></td>
-            <td><input [(ngModel)]="user.admin" class="rounded" type="checkbox" disabled></td>
+            <td><input [(ngModel)]="user.isReviewer" class="rounded" type="checkbox" disabled></td>
+            <td><input [(ngModel)]="user.isAdmin" class="rounded" type="checkbox" disabled></td>
             <td><a routerLink='/user-detail/{{user.id}}'>
                 <img width='20' height='20' src='assets/details.png' title='User Details'></a>
+                <span *ngIf="isAdmin">
             | <a routerLink='/user-edit/{{user.id}}'>
-              <img width='20' height='20' src='assets/pencil-icon.png' title='User Edit'></a></td>
+              <img width='20' height='20' src='assets/pencil-icon.png' title='User Edit'></a></span></td>
         </tr>
     </tbody>
 </table>

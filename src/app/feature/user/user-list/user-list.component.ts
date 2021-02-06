@@ -12,22 +12,23 @@ import { UserService } from 'src/app/service/user.service';
 export class UserListComponent implements OnInit {
   title = "User List"
   users: User[] = [];
-  isAdmin = true;
+  isNotAdmin = false;
+  isAdmin: boolean = this.sysSvc.isAdmin();
 
-  constructor(private userSvc: UserService, private router: Router, private sysSvc: SystemService) { }
+
+  constructor(private userSvc: UserService, private sysSvc: SystemService) { }
 
   ngOnInit(): void {
     this.sysSvc.checkLogin();
 
-    if((this.sysSvc.loggedInUser.admin)) {
-      this.isAdmin = false;
+    if(!(this.sysSvc.loggedInUser.isAdmin)) {
+      this.isNotAdmin = true;
     }
 
     // populate list of users
     this.userSvc.getAll().subscribe(
       resp => {
         this.users = resp as User[];
-        console.log('Users',this.users);
       },
       err => {
         console.log(err);

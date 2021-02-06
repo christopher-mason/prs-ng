@@ -11,7 +11,7 @@ export class SystemService {
   constructor(private router: Router) { }
 
   isAdmin(): boolean {
-    return (this.loggedInUser == null) ? false : this.loggedInUser.admin;
+    return (this.loggedInUser == null) ? false : this.loggedInUser.isAdmin;
   }
 
   checkLogin(): void {

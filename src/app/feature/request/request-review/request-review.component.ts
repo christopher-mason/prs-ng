@@ -17,10 +17,11 @@ export class RequestReviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.sysSvc.checkLogin();
-
-    this.requestSvc.review(this.sysSvc.loggedInUser.id).subscribe(
+    console.log("Calling review request");
+    this.requestSvc.reviewRequest(this.sysSvc.loggedInUser.id).subscribe(
       resp => {
         this.requests = resp as Request[];
+        console.log("Requests for review: ",this.requests);
       },
       err => {
         console.log(err);
