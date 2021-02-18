@@ -10,6 +10,8 @@ import { ProductService } from 'src/app/service/product.service';
 export class ProductListComponent implements OnInit {
   title = "Product List";
   products: Product[] = [];
+  //sortCriteria
+  //
 
   constructor(private productSvc: ProductService) { }
 
@@ -24,5 +26,7 @@ export class ProductListComponent implements OnInit {
       }
     );
   }
+
+  // Add sortBy(column: string)
 
 }
