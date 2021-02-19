@@ -27,6 +27,6 @@ export class ProductListComponent implements OnInit {
     );
   }
 
-  // Add sortBy(column: string)
+  // Add sortBy(column: string) {}
 
 }
